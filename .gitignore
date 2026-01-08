@@ -36,4 +36,4 @@ Thumbs.db
 *.log
 
 # personal file (can remove if not needed)
-examples/output.ch8
+games/output.ch8
