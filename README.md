@@ -2,6 +2,8 @@
 
 A CHIP-8 emulator written in C++ using **SDL3** for rendering, input, and timing.  
 
+Includes example games to run (run ```make help``` ) to view how
+
 ---
 
 ## Features
