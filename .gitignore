@@ -34,3 +34,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# personal file (can remove if not needed)
+examples/output.ch8

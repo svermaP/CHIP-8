@@ -490,6 +490,11 @@ void uploadFrameBuffer()
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
+    if (argc != 2) {
+        SDL_Log("Usage: %s <path_to_rom>", argv[0]);
+        return SDL_APP_FAILURE;
+    }
+
     memset(memory, 0, sizeof(memory));
     memset(vars, 0, sizeof(vars));
     memset(stack, 0, sizeof(stack));
@@ -534,7 +539,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     // writeToMemory(0x120a);
 
     // pc = 0x200;
-    if (!loadROM("examples/ultimatetictactoe.ch8"))
+    if (!loadROM(argv[1]))
     {
         SDL_Log("Failed to load ROM");
         return SDL_APP_FAILURE;
@@ -591,7 +596,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
         timer_accumulator -= TIMER_INTERVAL_MS;
     }
 
-    for (int k = 0; k < 20; k++)
+    for (int k = 0; k < 3; k++)
     {
         step();
     }
