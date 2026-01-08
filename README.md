@@ -1,30 +1,29 @@
 # CHIP-8 Emulator (C++ / SDL3)
 
-A CHIP-8 emulator written in modern C++ using **SDL3** for rendering, input, and timing.  
-Designed to be simple, correct, and explicit, with a clear fetch–decode–execute CPU model.
+A CHIP-8 emulator written in C++ using **SDL3** for rendering, input, and timing.  
 
 ---
 
 ## Features
 
-- Full CHIP-8 instruction set
-- 4 KB memory model (programs loaded at `0x200`)
+- CHIP-8 instruction set with most modern instructions
+- 4 KB memory
 - 16 general-purpose registers (`V0–VF`), stack, and index register
-- 60 Hz delay and sound timers (accumulator-based)
-- Sprite rendering with collision detection (`VF`)
-- Scaled 64×32 framebuffer via SDL streaming texture
+- 60 Hz delay and sound timers
+- Scaled 64×32 display
 - Keyboard input mapped to standard CHIP-8 layout
-- Deterministic random number generation
-- Blocking key instruction (`FX0A`) correctly implemented
-
 ---
 
-## Controls
+<h3>Controls</h3>
 
-CHIP-8: 1 2 3 C Keyboard: 1 2 3 4
-4 5 6 D Q W E R
-7 8 9 E A S D F
-A 0 B F Z X C V
+<p>CHIP-8 keypad → Host keyboard (QWERTY) </p>
+
+<pre>
+1 2 3 C    1 2 3 4
+4 5 6 D    Q W E R
+7 8 9 E    A S D F
+A 0 B F    Z X C V
+</pre>
 
 
 ---
@@ -43,19 +42,12 @@ make build
 ```
 
 ### Run (examples)
+```bash
 make ibm
 make breakout
 make flight
 make snake
 make tictactoe
-
-## Run a custom ROM from the examples/ directory (without .ch8):
-```bash
-make custom ARG=rom_name
-```
-
-## Example
-```bash
 make custom ARG=PONG
 ```
 
