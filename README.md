@@ -64,3 +64,6 @@ make custom ARG=PONG
 ```bash
 make help
 ```
+
+### Acknowledgements
+CHIP-8 behavior and architecture were referenced from [Tobias V. Langhoff’s CHIP-8 emulator guide](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/).
